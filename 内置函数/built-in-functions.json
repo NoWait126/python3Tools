@@ -1,0 +1,375 @@
+{
+"abs":{
+       "prototype"  :"abs(x)",
+       "input-type" :"n",
+       "args"   :[-1.2],
+       "output-type":"num",
+       "note"       :"返回入参的绝对值，可以是整数或者浮点数，复数的话返回它的模"
+      },
+"all":{
+       "prototype"  :"all(iterable)",
+       "input-type" :"iterable",
+       "args"       :[1,0,1],
+       "output-type":"bool",
+       "note"       :"如果入参的元素全是True的话，该函数返回True，否则返回False"
+      },
+"any":{
+       "prototype"  :"any(iterable)",
+       "input-type" :"iterable",
+       "args"   :[1,0,1],
+       "output-type":"bool",
+       "note"       :"只要入参的元素有一个为True，就返回True，否则返回False"
+      },
+"ascii":{
+       "prototype"  :"ascii(object)",
+       "input-type" :"n",
+       "args"   :[1],
+       "output-type":"str",
+       "note"       :"该函数返回一个字符串，该字符串包含一个可打印的对象"
+      },
+"bin":{
+       "prototype"  :"bin(x)",
+       "input-type" :"n",
+       "args"       :[-10],
+       "output-type":"str",
+       "note"       :"返回一个前缀为'0b'的二进制串，x必须为int对象"
+      },
+"bool":{
+       "prototype"  :"class bool([x])",
+       "input-type" :"n",
+       "args"       :["a"],
+       "output-type":"bool",
+       "note"       :"返回True或者False,x使用真值测试来转换，比如任何类型的0值或者空的序列都会返回False，任何类不能继承该类，它只有True和False两个实例"
+      },
+"callable":{
+       "prototype"  :"callable(object)",
+       "input-type" :"n",
+       "args"       :[1],
+       "output-type":"bool",
+       "note"       :"判断对象是不是可调用的，可被调用指的是对象能否使用()括号的方法调用,比如入参是整数1，1是不可调用的。"
+      },
+"chr":{
+       "prototype"  :"chr(i)",
+       "input-type" :"n",
+       "args"       :[97],
+       "output-type":"char",
+       "note"       :"i为整数，返回一个Unicode编码为i的字符"
+      },
+"@classmethod":{
+       "prototype"  :"@classmethod",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"把一个方法封装成类方法。类方法就是直接可以在类上面调用，而非类方法只能通过类的实例调用，比如类A有实例a和类方法f1和非类方法f2，那么可以使用A.f1()和a.f1()调用f1，而只能使用a.f2()调用f2，不能使用A.f2()。"
+      },
+"compile":{
+       "prototype"  :"compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)",
+       "input-type" :"n",
+       "args"       :["for i in range(0,10): print(i)", "", "exec"],
+       "output-type":"object",
+       "note"       :"将source编译成代码或 AST 对象。代码对象可以被 exec() 或 eval() 执行。source 可以是常规的字符串或者AST对象。filename 实参是代码读取的文件名；如果代码不需要从文件中读取，可以传入一些可辨识的值常用string。mode 实参指定了编译代码必须用的模式，如果source 是语句序列，则为exec；如果是单一表达式，可以是eval；如果是单个交互式语句，可以是single。"
+      },
+"complex":{
+       "prototype"  :"class complex([real[, imag]])",
+       "input-type" :"n",
+       "args"       :[2, 3],
+       "output-type":"num",
+       "note"       :"函数（假设入参为a,b）用于创建一个值是a+b*i的复数或转化一个字符串或数为复数，如果第一个参数是字符串的话，不需要指定第二个参数。"
+      },
+"delattr":{
+       "prototype"  :"delattr(object, name)",
+       "input-type" :"class",
+       "args"       :{"类名": "Car", "所有属性":{"price": 10, "speed": 60, "color": "black"}, "要操作的属性": "color"},
+       "output-type":"class",
+       "note"       :"删除object中属性名为name的属性"
+      },
+"dict":{
+       "prototype"  :"class dict(**kwarg) 或者 class dict(mapping, **kwarg) 或者 class dict(iterable, **kwarg)",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"将输入的数据转为dict。"
+      },
+"divmod":{
+       "prototype"  :"divmod(a, b)",
+       "input-type" :"n",
+       "args"       :[5,3],
+       "output-type":"tuple",
+       "note"       :"返回输入数的商和余数，是一个tuple。"
+      },
+"enumerate":{
+       "prototype"  :"enumerate(iterable, start=0)",
+       "input-type" :"iterable",
+       "args"       :["name", "age"],
+       "output-type":"iterable",
+       "note"       :"函数原型为enumerate(iterable, start=0)，返回一个从start开始的tuple的迭代器"
+      },
+"eval":{
+       "prototype"  :"eval(expression, globals=None, locals=None)",
+       "input-type" :"str",
+       "args"       :"3 + 4",
+       "output-type":"num",
+       "note"       :"将字符串str当成有效的表达式来求值并返回计算结果。globals和locals是可选参数，如果有globals参数，那么它必须是dictionary类型，如果有locals参数，它可以是任意的map对象。"
+      },
+"exec":{
+       "prototype"  :"exec(object[, globals[, locals]])",
+       "input-type" :"n",
+       "args"       :["z = 30\nsum = x + y + z\nprint(sum)\n", {"x": 3, "y":2}],
+       "output-type":"None",
+       "note"       :"这个函数支持动态执行 Python 代码。object 必须是字符串或者代码对象。如果是字符串，那么该字符串将被解析为一系列 Python 语句并执行, 如果同时提供了 globals 和 locals 参数，它们分别被用作全局和本地变量。示例中执行了print函数，执行结果中间有打印的结果。"
+      },
+"filter":{
+       "prototype"  :"filter(function, iterable)",
+       "input-type" :"",
+       "args"       :"", 
+       "output-type":"",
+       "note"       :"用 iterable 中函数 function 返回真的那些元素，构建一个新的迭代器。iterable 可以是一个序列，一个支持迭代的容器，或一个迭代器。如果 function 是 None ，则会假设它是一个身份函数，即 iterable 中所有返回假的元素会被移除。"
+      },
+"float":{
+       "prototype"  :"class float([x])",
+       "input-type" :"n",
+       "args"       :["3"],
+       "output-type":"num",
+       "note"       :"给一个数或者可以转为浮点数的字符串，输出一个浮点数"
+      },
+"frozenset":{
+       "prototype"  :"class frozenset([iterable])",
+       "input-type" :"iterable",
+       "args"       :["1","2","3"],
+       "output-type":"list",
+       "note"       :"给一个可迭代的对象，比如list,dict等，返回一个不可更新的frozenset对象"
+      },
+"getattr":{
+       "prototype"  :"getattr(object, name[, default])",
+       "input-type" :"class",
+       "args"       :{"类名": "Car", "所有属性":{"price": 10, "speed": 60, "color": "black"}, "要操作的属性": "speed"},
+       "output-type":"class",
+       "note"       :"返回对象的属性值，attr必须为字符串。"
+      },
+"globals":{
+       "prototype"  :"globals()",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"dict",
+       "note"       :"返回一个数据字典，里面是当前模块的全局符号表。"
+      },
+"hasattr":{
+       "prototype"  :"hasattr(object, name)",
+       "input-type" :"class",
+       "args"       :{"类名": "Car", "所有属性":{"price": 10, "speed": 60, "color": "black"}, "要操作的属性": "color"},
+       "output-type":"bool",
+       "note"       :"返回bool类型，入参是一个对象和一个属性，如果该对象有该属性则返回True，否则返回False。"
+      },
+"hash":{
+       "prototype"  :"hash(object)",
+       "input-type" :"object",
+       "args"       :"python",
+       "output-type":"num",
+       "note"       :"如果输入的对象有hash值的话，返回对象的hash值，可以用来在字典中快速比较键值。"
+      },
+"hex":{
+       "prototype"  :"hex(x)",
+       "input-type" :"n",
+       "args"       :[10],
+       "output-type":"num",
+       "note"       :"返回输入对象的16进制数。"
+      },
+"id":{
+       "prototype"  :"id(object)",
+       "input-type" :"n",
+       "args"       :[3],
+       "output-type":"num",
+       "note"       :"返回输入对象的标示值，其实就是对象的内存地址，保证在此对象的生命周期周唯一且恒定，不同生命周期的对象返回值可能相同。"
+      },
+"input":{
+       "prototype"  :"input([prompt])",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"如果有参数，将参数其写入标准输出，末尾不带换行符，然后该函数从输入中读取一行，将其转换为字符串（除了末尾的换行符）并返回。"
+      },
+"int":{
+       "prototype"  :"int([x])或者int(x, base=10)",
+       "input-type" :"n",
+       "args"       :["10", 8],
+       "output-type":"num",
+       "note"       :"返回一个使用数字或字符串 x 生成的整数对象，或者没有实参的时候返回 0，如果 x 不是数字，或者有 base 参数，x 必须是字符串、bytes、表示进制为 base 的 整数字。示例中表示把八进制的10转为int，所以是8。"
+    },
+"isinstance":{
+       "prototype"  :"isinstance(object, classinfo)",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"如果 object 实参是 classinfo 实参的实例或者是子类的实例，返回True。如果 object 不是给定类型的实例，函数返回False。classinfo也可以是类对象的元组，这样的会逐个判断，object是其中的一个实例就会返回True。"
+    },
+"issubclass":{
+       "prototype"  :"issubclass(class, classinfo)",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"如果class是classinfo的子类，返回True,如果class不是给定类型的子类，函数返回False。classinfo也可以是类对象的元组，这样的会逐个判断，class是其中的一个子类就会返回True。"
+    },
+"iter":{
+       "prototype"  :"iter(object[, sentinel])",
+       "input-type" :"list",
+       "args"       :["1", "2", "3"],
+       "output-type":"iterator",
+       "note"       :"返回一个 iterator 对象。如果只有object这个参数的话，object 必须是支持迭代协议（即有 __iter__() 方法）的集合对象，或必须支持序列协议（即有 __getitem__() 方法，且数字参数从 0 开始）。如果有第二个实参 sentinel，那么 object 必须是可调用的对象。这种情况下生成的迭代器，每次迭代调用它的 __next__() 方法时都会不带实参地调用 object；如果返回的结果是 sentinel 则触发 StopIteration，否则返回调用结果。"
+    },
+"len":{
+       "prototype"  :"len",
+       "input-type" :"list",
+       "args"       :["1", "2", "3"],
+       "output-type":"num",
+       "note"       :"返回对象的长度或者元素个数，实参可以是序列如 string、bytes、tuple、list、range也可以是集合如dictionary、se 或frozen set 等。"
+    },
+"list":{
+       "prototype"  :"class list([iterable])",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"参考https://docs.python.org/3/library/stdtypes.html#list。"
+    },
+"locals":{
+       "prototype"  :"locals()",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"list",
+       "note"       :"更新并返回表示当前本地符号表的字典。"
+    },
+"map":{
+       "prototype"  :"map(function, iterable, ...)",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"产生一个将 function 应用于迭代器中所有元素并返回结果的迭代器。"
+    },
+"max":{
+       "prototype"  :"max(iterable, *[, key, default])",
+       "input-type" :"list",
+       "args"       :[2,4],
+       "output-type":"num",
+       "note"       :"返回可迭代对象中最大的元素，或者返回两个及以上实参中最大的。"
+    },
+"min":{
+       "prototype"  :"min(iterable, *[, key, default])",
+       "input-type" :"list",
+       "args"       :[2,4],
+       "output-type":"num",
+       "note"       :"返回可迭代对象中最小的元素，或者返回两个及以上实参中最小的。"
+    },
+"memoryview":{
+       "prototype"  :"memoryview(obj)",
+       "input-type" :"bytes",
+       "args"       :["python","ascii"],
+       "output-type":"num",
+       "note"       :"返回由给定实参创建的内存查看对象，内存查看对象是指对支持缓冲区协议的数据进行包装，在不需要复制对象基础上允许Python代码访问。Python内置对象中支持缓冲区协议的对象有bytes和bytearray，所以输入字符串的时候要在前面加上b，或者使用bytes转换"
+    },
+"next":{
+       "prototype"  :"next(iterator[, default])",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"过调用iterator的__next__()方法获取下一个元素。如果迭代器耗尽，则返回给定的 default。"
+    },
+"object":{
+       "prototype"  :"object",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"返回一个没有特征的新对象。object 是所有类的基类。它具有所有 Python 类实例的通用方法,不接受任何实参。"
+    },
+"oct":{
+       "prototype"  :"oct(x)",
+       "input-type" :"n",
+       "args"       :[-57],
+       "output-type":"num",
+       "note"       :"将一个整数转变为一个前缀为“0o”的八进制字符串。"
+    },
+"ord":{
+       "prototype"  :"ord(c)",
+       "input-type" :"char",
+       "args"       :"a",
+       "output-type":"num",
+       "note"       :"对表示单个 Unicode 字符，返回代表它Unicode码点的整数，是chr() 的逆函数。"
+    },
+"pow":{
+       "prototype"  :"pow(x, y[, z])",
+       "input-type" :"num",
+       "args"       :[2,3],
+       "output-type":"num",
+       "note"       :"返回x的y次幂；如果z存在，则对z取余，即pow(x, y) % z。"
+    },
+"range":{
+       "prototype"  :"range(start, stop[, step]) 或 range(stop)",
+       "input-type" :"num",
+       "args"       :[3,13],
+       "output-type":"range",
+       "note"       :"虽然被称为函数，但 range 实际上是一个不可变的序列类型。"
+    },
+"repr":{
+       "prototype"  :"repr(object)",
+       "input-type" :"str",
+       "args"       :"python",
+       "output-type":"str",
+       "note"       :"返回包含一个对象的可打印表示形式的字符串，和ascii类型，但是repr返回的字符串中非 ASCII 编码的字符，会使用 \\x、\\u 和 、\\U 来转义。"
+   },
+"reversed":{
+       "prototype"  :"reversed(seq)",
+       "input-type" :"list",
+       "args"       :[1, 2, 3],
+       "output-type":"iterable",
+       "note"       :"返回一个反向的 iterator，seq 必须是一个具有__reversed__()方法的对象。本用例的输出是使用了list()函数后的样式。"
+   },
+"round":{
+       "prototype"  :"round(number[, ndigits])",
+       "input-type" :"n",
+       "args"       :[3.626, 2],
+       "output-type":"num",
+       "note"       :"返回 number 舍入到小数点后ndigits位精度的值，由于浮点数的误差所以该函数有时并不会返回期望的值，比如round(2.675, 2)返回了2.67而不是2.68。"
+   },
+"setattr":{
+       "prototype"  :"setattr(object, name, value)",
+       "input-type" :"",
+       "args"       :"",
+       "output-type":"",
+       "note"       :"字符串指定一个现有属性或者新增属性，函数会将值赋给该属性，例如setattr(x, 'foobar', 123)等价于x.foobar = 123。"
+   },
+"sorted":{
+       "prototype"  :"sorted(iterable, *, key=None, reverse=False)",
+       "input-type" :"list",
+       "args"       :[5, 9, 2, 1],
+       "output-type":"list",
+       "note"       :"根据 iterable 中的项返回一个新的已排序列表。"
+   },
+"sum":{
+        "prototype"  :"sum(iterable[, start])",
+        "input-type" :"list",
+        "args"       :[5, 2, 3],
+        "output-type":"num",
+        "note"       :"从start开始自左向右对iterable中的项求和并返回总计值，start 默认为0。"
+   },
+"type":{
+        "prototype"  :"type(object) 或者 type('X', (object,), dict(a=1))",
+        "input-type" :"str",
+        "args"       :"python",
+        "output-type":"str",
+        "note"       :"传入一个参数时，返回 object 的类型，返回值是一个type对象。传入三个参数时，返回一个新的type对象，这在本质上是 class 语句的一种动态形式。 name 字符串即类名并且会成为 __name__ 属性，bases元组列出基类并且会成为 __bases__ 属性；而 dict 字典为包含类主体定义的命名空间并且会被复制到一个标准字典成为 __dict__ 属性。例如X = type('X', (object,), dict(a=1))会生成一个类名为X的类，该类继承object，并且该类有属性a，a的默认值是1。"
+   },
+"vars":{
+        "prototype"  :"ars([object])",
+        "input-type" :"class",
+        "args"       :{"类名": "Car", "所有属性":{"price": 10, "speed": 60, "color": "black"}},
+        "output-type":"class",
+        "note"       :"返回模块、类、实例或任何其它具有 __dict__ 属性的对象的 __dict__ 属性。"
+   },
+"zip":{
+        "prototype"  :"zip(*iterables)",
+        "input-type" :"n",
+        "args"       :[[1, 2, 3],["one", "two"]],
+        "output-type":"iterable",
+        "note"       :"返回一个元组的迭代器，其中的第 i 个元组包含来自每个参数序列或可迭代对象的第 i 个元素， 当所输入可迭代对象中最短的一个被耗尽时，迭代器将停止迭代。"
+   }
+}
+
+

@@ -1,0 +1,36 @@
+一 pip
+
+    1 简介：python包管理工具。
+    
+    2 安装方法：curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+               python get-pip.py
+
+    3 使用方法：pip install MODUAL 即可安装MODUAL
+
+               支持一次安装多个依赖库，库名卸载reqirments.txt中：pip install –r requirements.txt
+
+二 virtualenv
+
+    1 简介：Python的开发环境支持包
+
+    设想开发场景：
+
+    在开发Python应用程序的时候，系统安装的可能是Python3.4的版本，那么pip安装到Python3的site-packages目录下。如果我们要同时开发多个应用程序都需要用到同一个工具包，其中一个需要的工具包是A版本，另外一个需要的工具包是B版本。开发一个的时候安装A版本开发另外一个的时候卸载A版本再安装B版本是不现实的。virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
+
+    2 安装方法：pip install virtualenv
+
+    3 使用方法
+
+      virtualenv venv               # 生成一个名字为venv的文件夹，这个就是你的虚拟环境
+
+      .\venv\Scripts\activate       # window环境输入这个命令
+      
+      source ./venv/source/activate # ubuntu环境输入这个命令
+
+      此时在当前窗口下pip安装的任何库都只存在这个虚拟环境下面
+
+      deactivate                # window环境退出独立的Python环境
+      
+      exit                      # ubuntu环境退出独立的Python环境
+~                                                  

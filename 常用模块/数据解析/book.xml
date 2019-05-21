@@ -1,0 +1,12 @@
+<root>
+<book title="Python网络编程">
+   <type>Python</type>
+   <price>40</price>
+   <year>2003</year>
+</book>
+<book title="C++ Primer">
+   <type>C++</type>
+   <price>99</price>
+   <year>2008</year>
+</book>
+</root>
